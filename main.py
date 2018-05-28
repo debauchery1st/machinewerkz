@@ -20,7 +20,7 @@ DELAY = 50
 pygame.init()
 _icon = pygame.image.load('data/img/steampunk.png')
 pygame.display.set_icon(_icon)
-pygame.display.set_caption("MachineWerkz")
+pygame.display.set_caption("Machine Werkz")
 
 # set the display size
 screen = pygame.display.set_mode(
