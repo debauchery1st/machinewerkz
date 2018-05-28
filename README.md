@@ -1,2 +1,7 @@
 # machinewerkz
-fun with python3 and pygame
+
+
+a finite state machine written in python 3
+
+![screenshot](screenshot.png)
+
