@@ -36,7 +36,7 @@ piece = Picard(screen=screen, pg=pygame, square_unit=SU,
                colors=[COLOR_A, COLOR_B],
                text_pos=[SCREEN_WIDTH - SU*3, 0],
                text_size=int(SU/4))
-PLAYLIST = ['data/audio/{}'.format(_) for _ in listdir('data/audio')]
+PLAYLIST = ['data/audio/{}'.format(_) for _ in listdir('data/audio') if _.endswith('.mp3')]
 shuffle(PLAYLIST)
 INTRO = PLAYLIST.pop()
 SONG_END = load_song(pygame, INTRO)
