@@ -88,11 +88,22 @@ class Picard:
             return [(_[0], _[1]) for _ in [h, i, j, k] if _[1] >= 0]
 
         def game_over(self):
-            self.text_pos[0] = 100
-            self.text_pos[1] = 200
+            self.text_pos = (100, 200)
             self.text_size = int(self.board.square_unit/1.6)
             self.text_score = ['GAME OVER', 'SCORE {}'.format(self.score)]
             self.game_on = False
+
+        def pause(self):
+            unpaused = (self.board.cols * self.board.square_unit) - self.board.square_unit*3
+            if self.text_pos[0] == unpaused:
+                self.text_pos = (100, 200)
+                self.text_size = int(self.board.square_unit / 1.6)
+                self.game_on = False
+            else:
+                self.text_pos = (unpaused, 0)
+                self.text_size = int(self.board.square_unit / 4)
+                self.game_on = True
+            self.text_score = ['PAUSED', 'SCORE {}'.format(self.score)]
 
         def restart_game(self):
             x = (self.board.cols * self.board.square_unit) - self.board.square_unit*3

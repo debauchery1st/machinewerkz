@@ -95,6 +95,8 @@ def run():
                 if event.key == pygame.K_DOWN and piece.game_on:
                     piece.move(DOWN)
                     clock.tick(60)
+                if event.key == pygame.K_p:
+                    piece.pause()
         screen.fill((0, 0, 0))
         x, y = piece.text_pos
         _ok, msg = piece.draw()
